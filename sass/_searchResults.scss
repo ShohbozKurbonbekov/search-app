@@ -1,0 +1,105 @@
+.results {
+  @include flexColumn;
+  padding: 0.5rem 1rem;
+  width: 90vw;
+
+  @include mediaQuery(768px) {
+    width: 75vw;
+  }
+
+  @include mediaQuery(1025px) {
+    width: 55vw;
+  }
+
+  .statsBar {
+    width: 100%;
+
+    .stats {
+      color: $stats-color;
+      font-size: 0.6rem;
+      text-decoration: underline;
+      @include mediaQuery(768px) {
+        font-size: 1rem;
+      }
+    }
+  }
+  .searchResults {
+    width: 100%;
+
+    .resultItem {
+      @include flexColumn;
+      width: 100%;
+      padding: 0.25rem 0;
+
+      @include mediaQuery(768px) {
+        padding: 0.5rem;
+      }
+      .resultTitle {
+        width: 100%;
+        text-align: left;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin-bottom: 0.25rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 3px 2px;
+
+        @include mediaQuery(768px) {
+          font-size: 1.5rem;
+          line-height: 1.75rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+      a {
+        color: $link-color;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      a:visited {
+        color: $link-visited-color;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      a:focus {
+        outline: 2px solid $link-outline-color;
+      }
+
+      .resultContents {
+        display: flex;
+        width: 100%;
+
+        .resultImage {
+          margin-right: 0.5rem;
+          width: 50px;
+          height: 50px;
+
+          img {
+            width: 100%;
+          }
+        }
+        .resultText {
+          flex-grow: 1;
+          font-size: 14px;
+          line-height: 20px;
+          max-height: 60px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          @include mediaQuery(768px) {
+            font-size: 1rem;
+            line-height: 28px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// white-space = The white-space property specifies how white-space inside an element is handled.
+// 1. Normal = Matn odatdagidek oʻraladi va oq boʻshliqlar ketma-ketligi (masalan, boʻshliqlar, yorliqlar va yangi qatorlar) bitta boʻshliqqa yigʻiladi. Matn ham idishning kengligiga mos ravishda o'raladi.
+// nowrap = Matn keyingi qatorga oʻtmaydi. Agar chiziq uzilishi ( <br>) aniq qo'yilmasa, barcha matn bitta satrda bo'ladi.
+// text-overflow = The text-overflow property in CSS is used to specify how overflowed text content should be handled when it does not fit within its container. It primarily applies to elements with constrained width and text that exceeds the available space.
+// text-overflow / clip = Behavior: The overflowed text is clipped, and no indication is given to the user that the text has been cut off.
+// ellipsis = Behavior: Overflowed text is replaced with an ellipsis (...) to indicate that there is more text that is not visible.

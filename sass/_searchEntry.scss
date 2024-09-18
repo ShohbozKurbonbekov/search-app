@@ -1,0 +1,98 @@
+.searchEntry {
+  @include flexColumn;
+  padding-top: 2rem;
+
+  .logo {
+    font-size: 2rem;
+    letter-spacing: -5px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+
+    @include mediaQuery(768px) {
+      font-size: 4rem;
+      letter-spacing: -0.4rem;
+    }
+  }
+
+  .searchBar {
+    width: 90vw;
+    display: flex;
+    border: 2px solid $search-bar-border;
+    border-radius: 200px;
+    padding: 3.5px 5.5px 3.5px 15px;
+
+    @include mediaQuery(768px) {
+      width: 80vw;
+      padding: 20px 25px;
+    }
+    @include mediaQuery(1025px) {
+      width: 60vw;
+    }
+    input[type="text"] {
+      flex-grow: 1;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      outline: none;
+      border: 0;
+      min-width: 150px;
+      @include mediaQuery(768px) {
+        font-size: 1.25rem;
+      }
+    }
+
+    button {
+      cursor: pointer;
+      background-color: transparent;
+      min-width: 40px;
+      min-height: 40px;
+      outline: none;
+      border: 0;
+
+      i {
+        font-family: "font awesome 5 free";
+        font-size: 1rem;
+        @include mediaQuery(768px) {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    button:hover,
+    button:focus {
+      i {
+        padding-bottom: 0.2rem;
+        border-bottom-style: solid;
+        border-width: 1px;
+        color: $logo-green;
+      }
+    }
+
+    .searchButton {
+      @include mediaQuery(768px) {
+        padding-left: 1rem;
+      }
+    }
+    .clear {
+      justify-content: center;
+      align-items: center;
+      color: $stats-color;
+      border-right: thin solid $clear-button-color;
+      padding: 0 0.3rem;
+    }
+    .clear:hover,
+    .clear:focus {
+      i {
+        color: $logo-red;
+        padding-bottom: 0.2rem;
+        border-bottom-style: solid;
+        border-width: 1px;
+      }
+    }
+  }
+
+  .searchBar:hover,
+  .searchBar:focus-within {
+    box-shadow: 0 2px 5px 2px $search-bar-border;
+  }
+}
+
+//1. selector:focus-within": This pseudo-class applies when any element inside the searchBar is focused (such as a text input, button, or dropdown within it).
